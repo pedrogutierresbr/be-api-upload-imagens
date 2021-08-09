@@ -1,4 +1,4 @@
-# Servidor API Pay&Take
+# Servidor API (Upload-imagens)
 
 ## Sobre o projeto
 
