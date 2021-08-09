@@ -6,9 +6,10 @@ function upload(req, res) {
             //simulando um atraso para que eu possa "enxergar" o carregamento da imagem
             const aguardar = new Date(new Date().getTime() + 3000);
             while (aguardar > new Date()) {}
-            const imagem = res.files.imagem;
-            imagem.mv("../public/uploads" + imagem.name);
+            const imagem = req.files.imagem;
+            imagem.mv("./public/uploads/" + imagem.name);
             res.json({ path: `http://localhost:3001/uploads/${imagem.name}` });
+            console.log("Imagem carregada com sucesso");
         }
     } catch (err) {
         console.log(err);
@@ -16,4 +17,4 @@ function upload(req, res) {
     }
 }
 
-module.exports = { upload };
+module.exports = upload;

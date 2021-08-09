@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const fileUpload = require("express-fileupload");
 
-const { upload } = require("./controllers/upload.js");
+const upload = require("./controllers/upload.js");
 
 const app = express(); //criado servidor
 const port = 3001; //definido porta de atuacao do servidor
