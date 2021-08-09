@@ -4,7 +4,7 @@ function upload(req, res) {
             res.status(400).send({ erro: "Nenhum arquivo encontrado" });
         } else {
             //simulando um atraso para que eu possa "enxergar" o carregamento da imagem
-            const aguardar = new Date(new Date().getTime() + 3000);
+            const aguardar = new Date(new Date().getTime() + 1500);
             while (aguardar > new Date()) {}
             const imagem = req.files.imagem;
             imagem.mv("./public/uploads/" + imagem.name);
